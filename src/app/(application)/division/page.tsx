@@ -1,4 +1,6 @@
-import ViewDivision from "@/module/division/view/view_division";
+import { ViewDivision } from "@/module/division";
+
+
 
 
 

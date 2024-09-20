@@ -1,12 +1,10 @@
-import {AllLayout} from '@/module/_global/layout/all_layout'
+import { LayoutBackground } from '@/module/_global'
 import React from 'react'
 
-export default function Layout({children}: {children: React.ReactNode}) {
+export default function layout({children}: {children: React.ReactNode}) {
   return (
-    <div>
-      <AllLayout>
-         {children}
-      </AllLayout>
-    </div>
+    <LayoutBackground>
+      {children}
+    </LayoutBackground>
   )
 }

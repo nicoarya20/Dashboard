@@ -1,6 +1,10 @@
+import { ViewLogin } from "@/module/auth";
+
 
 export default function Home() {
-  return <>
-  
-  </>
+  return (
+
+    //login
+    <ViewLogin/>
+  )
 }
