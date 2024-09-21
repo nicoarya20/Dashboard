@@ -54,7 +54,7 @@ export default function ViewVerification() {
                     radius={30}
                     fullWidth
                     onClick={() => {
-                      router.push("/dashboard")
+                      router.push("/beranda")
                     }}
                   >
                     Lanjut

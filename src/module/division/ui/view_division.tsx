@@ -1,5 +1,3 @@
-
-import { LayoutBackground } from '../../_global'
 import IsiDivision from './isi_division'
 
 
