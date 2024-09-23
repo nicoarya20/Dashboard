@@ -1,7 +1,8 @@
-import React from 'react'
+import { ViewGrup } from '@/module/grup'
+
 
 export default function page() {
   return (
-    <div>Ini Grup</div>
+    <ViewGrup/>
   )
 }

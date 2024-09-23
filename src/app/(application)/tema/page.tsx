@@ -1,7 +1,7 @@
-import React from 'react'
+import { ViewTema } from '@/module/tema'
 
 export default function page() {
   return (
-    <div>Ini Tema</div>
+    <ViewTema/>
   )
 }

@@ -1,7 +1,8 @@
+import { ViewJabatan } from '@/module/jabatan'
 import React from 'react'
 
 export default function page() {
   return (
-    <div>Jabatan</div>
+    <ViewJabatan/>
   )
 }

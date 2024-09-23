@@ -1,7 +1,8 @@
-import React from 'react'
+import ViewAnggota from '@/module/anggota/ui/view_anggota'
+
 
 export default function Page() {
   return (
-    <div>Ini Anggota</div>
+    <ViewAnggota/>
   )
 }

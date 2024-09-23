@@ -1,9 +1,12 @@
 "use client"
 import { WARNA } from '@/module/_global'
-import { Anchor, Box, Card, Flex, Grid, GridCol, Group, Paper, Table, Text, Textarea, TextInput, } from '@mantine/core'
+import { ActionIcon, Anchor, Box, Button, Card, Flex, Grid, GridCol, Group, Paper, Table, Text, Textarea, TextInput, } from '@mantine/core'
 import React from 'react'
 import { BsFillPlusCircleFill } from "react-icons/bs";
+import { FiFilter } from "react-icons/fi";
+import { HiMiniUserGroup } from 'react-icons/hi2';
 import { TbReportAnalytics } from "react-icons/tb";
+
 
 export default function IsiDivision() {
   const elements = [
@@ -31,12 +34,16 @@ export default function IsiDivision() {
   return (
     <Box>
       <Paper withBorder p={"xs"}>
+        <Group>
+        <ActionIcon variant='transparent'>
+        <HiMiniUserGroup color={WARNA.biruTua} size={30}  />
+        </ActionIcon>
         <Text fw={'-moz-initial'} size='25px'
-          pl={20}
           pb={10}
           pt={10}
           c={WARNA.biruTua}
         >Divisi</Text>
+        </Group>
       </Paper>
       <Grid>
         <GridCol span={{
@@ -50,7 +57,7 @@ export default function IsiDivision() {
             <Group>
               <Flex direction={"column"}>
                 <Paper withBorder pr={180} >
-                  <Flex direction={"column"} pl={15} pt={10} >
+                  <Flex direction={"column"} pl={15} pt={10} pb={20}>
                     <Text>Grup</Text>
                     <TextInput w={650} placeholder='Masukkan Grup' />
                     <Text pt={10}>Nama Divisi</Text>
@@ -62,6 +69,7 @@ export default function IsiDivision() {
                       maxRows={4} />
                     <Text pt={10} >Pilih Anggota</Text>
                     <TextInput pb={20} placeholder='Masukkan Anggota' />
+                    <Button bg={WARNA.biruTua}>Simpan</Button>
                   </Flex>
                 </Paper>
               </Flex>
@@ -77,24 +85,34 @@ export default function IsiDivision() {
         }}>
           <Flex pt={20} direction={"row"}>
             <Anchor underline='never'>
-              <Card bg={WARNA.bgIcon} withBorder p={20} w={450} radius={10} h={150} style={{ justifyContent: "center" }}>
+              <Card bg={WARNA.biruTua} withBorder p={20} w={450} radius={10} h={150} style={{ justifyContent: "center" }}>
                 <Group style={{ justifyContent: "center" }}>
                   <BsFillPlusCircleFill size={50} color={"white"} />
                   <Text fw={'-moz-initial'} size='25px' c={'white'} ta={'center'} >Tambah Divisi</Text>
                 </Group>
               </Card>
             </Anchor>
-            <Card bg={WARNA.bgIcon} withBorder p={20} w={500} radius={10} style={{ justifyContent: "center" }}>
-              <Text ta={'center'} fw={'-moz-initial'} size='25px' c={'white'}>Filter</Text>
-            </Card>
+            <Anchor underline='never'>
+              <Card bg={WARNA.biruTua} withBorder p={20} w={500} radius={10} h={150} style={{ justifyContent: "center" }}>
+                <Group style={{ justifyContent: "center" }}>
+                  <FiFilter size={50} color={"white"} />
+                  <Text ta={'center'} fw={'-moz-initial'} size='25px' c={'white'}>Filter</Text>
+                </Group>
+              </Card>
+            </Anchor>
           </Flex>
-          <Card bg={WARNA.bgIcon} withBorder p={20} w={950} radius={10} pt={20} h={175} style={{ justifyContent: "center" }}>
-            <Text ta={'center'} fw={'-moz-initial'} size='25px' c={'white'}>Report</Text>
-          </Card>
+          <Anchor underline='never'>
+            <Card bg={WARNA.biruTua} withBorder p={20} w={950} radius={10} pt={20} h={175} style={{ justifyContent: "center" }}>
+              <Group style={{ justifyContent: "center" }}>
+                <TbReportAnalytics size={50} color='white' />
+                <Text ta={'center'} fw={'-moz-initial'} size='25px' c={'white'}>Report</Text>
+              </Group>
+            </Card>
+          </Anchor>
         </GridCol>
         <GridCol span={6}>
           <Box pl={20}>
-            <Card bg={WARNA.bgIcon} withBorder p={20} w={1905} radius={10} pt={20} h={600}>
+            <Card bg={WARNA.biruTua} withBorder p={20} w={1905} radius={10} pt={20} h={600}>
               <Text pb={10} fw={'-moz-initial'} size='25px' c={'white'}>Divisi</Text>
               <Card bg={"white"} withBorder p={20} w={1860} radius={10} pt={20} h={600}>
                 <Table>

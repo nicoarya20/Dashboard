@@ -1,7 +1,7 @@
-import React from 'react'
+import { ViewKegiatan } from "@/module/kegiatan";
 
 export default function page() {
   return (
-    <div>kagiatan</div>
+    <ViewKegiatan/>
   )
 }
