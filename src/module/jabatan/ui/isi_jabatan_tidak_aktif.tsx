@@ -6,9 +6,9 @@ import { FaUserTie } from "react-icons/fa6";
 import { FiFilter } from "react-icons/fi";
 
 
-export default function IsiJabatan() {
+export default function IsiJabatanTidakAktif() {
    const elements = [
-      { number: 1, grup: "Grup 1", jabatan: "Anggota" },
+      { number: 1, grup: "Grup 1", jabatan: "Anggotan tidak aktif" },
       { number: 2, grup: "Grup 2", jabatan: "Staff" },
       { number: 3, grup: "Grup 3", jabatan: "Kepala Devisi" },
       { number: 4, grup: "Grup 4", jabatan: "Staff" },

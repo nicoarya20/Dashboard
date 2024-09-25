@@ -1,7 +1,7 @@
-import React from 'react'
+import IsiKalender from './isi_kalender'
 
 export default function ViewKalender() {
   return (
-    <div>view_kalender</div>
+    <IsiKalender/>
   )
 }

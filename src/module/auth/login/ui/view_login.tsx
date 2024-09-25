@@ -1,7 +1,7 @@
 "use client"
 
 import { WARNA } from "@/module/_global"
-import { Box, Button, Card, Center, Flex, Image, Stack, Text, TextInput, Title } from "@mantine/core"
+import { Box, Button, Card, Center, Image, Stack, Text, TextInput} from "@mantine/core"
 import { useRouter } from "next/navigation"
 
 function ViewLogin() {
@@ -32,7 +32,7 @@ function ViewLogin() {
                         placeholder="XXX XXX XXX"
                         pb={50}
                      />
-                     <Button bg={WARNA.biruTua} fullWidth onClick={() => router.push('/verification')}>login</Button>
+                     <Button bg={WARNA.biruTua} radius={30} fullWidth onClick={() => router.push('/verification')}>login</Button>
                   </Box>
                </Stack>
             </Box>
