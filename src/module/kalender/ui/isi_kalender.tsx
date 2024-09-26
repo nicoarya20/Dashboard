@@ -1,6 +1,6 @@
 'use client'
 import { WARNA } from '@/module/_global'
-import { ActionIcon, Box, Button, Center, Flex, Group, Paper, Table, Text } from '@mantine/core'
+import { ActionIcon, Anchor, Box, Button, Center, Flex, Group, Paper, Table, Text } from '@mantine/core'
 import { Calendar } from '@mantine/dates'
 import { useRouter } from 'next/navigation'
 import React from 'react'
@@ -64,8 +64,10 @@ export default function IsiKalender() {
       <Table.Td>{element.deskripsi}</Table.Td>
       <Table.Td>
         <Group justify='center'>
-        <FaEdit color={WARNA.biruTua} size={30} />
-        <MdDelete color={WARNA.biruTua} size={30} />
+          <Anchor underline='never'>
+            <FaEdit onClick={()=>router.push("/editkalender")} color={WARNA.biruTua} size={30} />
+            <MdDelete color={WARNA.biruTua} size={30} />
+          </Anchor>
         </Group>
       </Table.Td>
     </Table.Tr>
@@ -76,17 +78,17 @@ export default function IsiKalender() {
       <Box>
         <Paper withBorder p={"xs"}>
           <Flex justify='space-between' align={'center'}>
-          <Group>
-            <ActionIcon variant="transparent">
-              <IoCalendarSharp color={WARNA.biruTua} size={30} />
-            </ActionIcon>
-            <Text fw={'-moz-initial'} size='25px'
-              pb={10}
-              pt={10}
-              c={WARNA.biruTua}
-            >Kalender</Text>
-          </Group>
-          <Button bg={WARNA.biruTua} radius={30} onClick={() => router.push('/tambahkalender')}>Tambah</Button>
+            <Group>
+              <ActionIcon variant="transparent">
+                <IoCalendarSharp color={WARNA.biruTua} size={30} />
+              </ActionIcon>
+              <Text fw={'-moz-initial'} size='25px'
+                pb={10}
+                pt={10}
+                c={WARNA.biruTua}
+              >Kalender</Text>
+            </Group>
+            <Button bg={WARNA.biruTua} radius={30} onClick={() => router.push('/tambahkalender')}>Tambah</Button>
           </Flex>
         </Paper>
       </Box>

@@ -1,5 +1,7 @@
+'use client'
 import { WARNA } from "@/module/_global";
-import { ActionIcon, Anchor, Box, Flex, Group, Paper, SimpleGrid, Text, Title } from "@mantine/core";
+import { ActionIcon, Anchor, Box, Button, Flex, Group, Paper, SimpleGrid, Text, Title } from "@mantine/core";
+import { useRouter } from "next/navigation";
 import { FaRegCircleCheck } from "react-icons/fa6";
 import { IoTimerOutline } from "react-icons/io5";
 import { MdEditDocument } from "react-icons/md";
@@ -8,10 +10,12 @@ import { RiCloseCircleFill } from "react-icons/ri";
 
 
 export default function IsiTugas() {
+  const router = useRouter()
   return (
     <Box>
       <Box>
         <Paper withBorder p={"xs"}>
+          <Flex justify={"space-between"} align={"center"}>
           <Group>
             <ActionIcon variant="transparent">
               <MdEditDocument color={WARNA.biruTua} size={30} />
@@ -22,10 +26,12 @@ export default function IsiTugas() {
               c={WARNA.biruTua}
             >Tugas</Text>
           </Group>
+          <Button bg={WARNA.biruTua} radius={20} onClick={()=>router.push("/tambahtugas")}>Tambah</Button>
+          </Flex>
         </Paper>
       </Box>
       <Box pt={20}>
-        <SimpleGrid cols={3} spacing={"sm"} verticalSpacing={"sm"}>
+        <SimpleGrid  cols={{ base: 1, sm: 2, lg: 4 }} spacing={"sm"} verticalSpacing={"sm"}>
           <Box>
             <Anchor underline="never">
               <Paper withBorder p={30} style={{ justifyContent: "center" }} bg={WARNA.biruTua}>

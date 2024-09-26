@@ -1,10 +1,9 @@
 "use client"
-import { ActionIcon, Button, Flex, Group, Paper, Text } from "@mantine/core";
-import IsiJabatan from "./isi_jabatan";
-import TabJabatan from "./tab_jabatan";
 import { WARNA } from "@/module/_global";
-import { FaUserTie } from "react-icons/fa6";
+import { ActionIcon, Button, Flex, Group, Paper, Text } from "@mantine/core";
 import { useRouter } from "next/navigation";
+import { FaUserTie } from "react-icons/fa6";
+import TabJabatan from "./tab_jabatan";
 
 
 export default function ViewJabatan() {

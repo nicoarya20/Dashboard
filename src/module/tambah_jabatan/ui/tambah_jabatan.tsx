@@ -1,6 +1,6 @@
 "use client"
 import { WARNA } from "@/module/_global";
-import { ActionIcon, Box, Button, Flex, Group, Paper, Select, Text } from "@mantine/core";
+import { ActionIcon, Box, Button, Card, Group, Paper, Select, Stack, Text } from "@mantine/core";
 import { useRouter } from "next/navigation";
 import { FaUserTie } from "react-icons/fa6";
 const dataGrup = [
@@ -45,45 +45,44 @@ export default function TambahJabatan() {
    return (
       <Box>
          <Box>
-         <Paper withBorder p={"xs"}>
-            <Group>
-            <ActionIcon variant="transparent">
-            <FaUserTie color={WARNA.biruTua} size={25} />
-            </ActionIcon>
-            <Text fw={'-moz-initial'} size='25px'
-               pb={10}
-               pt={10}
-               c={WARNA.biruTua}
-            >Tambah Jabatan</Text>
-            </Group>
-         </Paper>
+            <Paper withBorder p={"xs"}>
+               <Group>
+                  <ActionIcon variant="transparent">
+                     <FaUserTie color={WARNA.biruTua} size={25} />
+                  </ActionIcon>
+                  <Text fw={'-moz-initial'} size='25px'
+                     pb={10}
+                     pt={10}
+                     c={WARNA.biruTua}
+                  >Tambah Jabatan</Text>
+               </Group>
+            </Paper>
          </Box>
          <Box mt={20}>
-            <Paper withBorder pl={10}>
-               <Select
-                  pt={10} pr={10}
-                  label={<Text>Grup</Text>}
-                  placeholder="Pilih Grup"
-                  data={dataGrup.map((item) => ({
-                     value: item.value,
-                     label: item.label
-                  }))}
-               />
-               <Select
-                  pt={10} pr={10}
-                  label={<Text>Jabatan</Text>}
-                  placeholder="Pilih Jabatan"
-                  data={dataJabatan.map((item) => ({
-                     value: item.value,
-                     label: item.label
-                  }))}
-               />
-               <Flex direction={'column'} mr={10}>
-               <Button mt={10} mb={10} bg={WARNA.biruTua} radius={15} fullWidth>Simpan</Button>
-               <Button mt={10} mb={10} bg={WARNA.biruTua} radius={15} fullWidth onClick={() => router.push('/jabatan')} >Back</Button>
-               </Flex>
-               
-            </Paper>
+            <Card withBorder>
+               <Group>
+                  <Stack>
+                     <Select
+                        label={<Text>Grup</Text>}
+                        placeholder="Pilih Grup"
+                        data={dataGrup.map((item) => ({
+                           value: item.value,
+                           label: item.label
+                        }))}
+                     />
+                     <Select
+                        label={<Text>Jabatan</Text>}
+                        placeholder="Pilih Jabatan"
+                        data={dataJabatan.map((item) => ({
+                           value: item.value,
+                           label: item.label
+                        }))}
+                     />
+                  <Button  bg={WARNA.biruTua} radius={15} fullWidth>Simpan</Button>
+                  <Button  bg={WARNA.biruTua} radius={15} fullWidth onClick={() => router.push('/jabatan')} >Kembali</Button>
+                  </Stack>
+               </Group>
+            </Card>
          </Box>
       </Box>
    )

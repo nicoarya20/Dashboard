@@ -1,8 +1,5 @@
 'use client'
-import { WARNA } from '@/module/_global'
-import { ActionIcon, Anchor, Box, Button, Flex, Group, Paper, SimpleGrid, Table, Text, TextInput } from '@mantine/core'
-import React from 'react'
-import { MdGroupAdd } from 'react-icons/md'
+import { Box, Table } from '@mantine/core'
 
 const dataGrup = [
    { number: 1, grup: "merak" },

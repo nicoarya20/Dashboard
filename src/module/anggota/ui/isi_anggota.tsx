@@ -1,5 +1,9 @@
 'use client'
-import { Box, Paper, Table } from "@mantine/core";
+import { WARNA } from "@/module/_global";
+import { Anchor, Box, Group, Paper, Table } from "@mantine/core";
+import { useRouter } from "next/navigation";
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 
 export default function IsiAnggota() {
@@ -23,8 +27,17 @@ export default function IsiAnggota() {
          <Table.Td>{element.nama}</Table.Td>
          <Table.Td>{element.email}</Table.Td>
          <Table.Td>{element.tlp}</Table.Td>
+         <Table.Td>
+            <Group >
+               <Anchor underline="never">
+               <FaEdit onClick={()=>router.push("/editanggota")} color={WARNA.biruTua} size={30} />
+               <MdDelete color={WARNA.biruTua} size={30} />
+               </Anchor>
+            </Group>
+         </Table.Td>
       </Table.Tr>
    ));
+   const router = useRouter()
    return (
       <Box>
          <Box pr={5} pt={10} >
@@ -32,13 +45,16 @@ export default function IsiAnggota() {
                <Table>
                   <Table.Thead>
                      <Table.Tr pl={10}>
-                        <Table.Th style={{ justifyContent: "center" }}>No</Table.Th>
-                        <Table.Th style={{ justifyContent: "center" }}>Jabatan</Table.Th>
-                        <Table.Th style={{ justifyContent: "center" }}>Grup</Table.Th>
-                        <Table.Th style={{ justifyContent: "center" }}>User Role</Table.Th>
-                        <Table.Th style={{ justifyContent: "center" }}>Nama</Table.Th>
-                        <Table.Th style={{ justifyContent: "center" }}>Email</Table.Th>
-                        <Table.Th style={{ justifyContent: "center" }}>No.Telp</Table.Th>
+                        <Table.Th style={{ justifyContent: "center" }} >No</Table.Th>
+                        <Table.Th style={{ justifyContent: "center" }}  >Jabatan</Table.Th>
+                        <Table.Th style={{ justifyContent: "center" }} >Grup</Table.Th>
+                        <Table.Th style={{ justifyContent: "center" }}  >User Role</Table.Th>
+                        <Table.Th style={{ justifyContent: "center" }}  >Nama</Table.Th>
+                        <Table.Th style={{ justifyContent: "center" }}  >Email</Table.Th>
+                        <Table.Th style={{ justifyContent: "center" }} >No.Telp</Table.Th>
+                        <Table.Th style={{justifyContent: "center"}} >
+                           Action
+                        </Table.Th>
                      </Table.Tr>
                   </Table.Thead>
                   <Table.Tbody>{rows}</Table.Tbody>

@@ -107,7 +107,7 @@ export function LayoutBackground({ children }: { children: React.ReactNode }) {
             <Image width={50} height={50} src={"/assets/img/logo/logo-1.png"} alt='' />
           </ActionIcon>
           <Text c={'white'} pt={10} fz={25}
-          >Perbekal Desa Darmasaba</Text>
+          >PERBEKEL DARMASABA</Text>
 
         </Group>
       </AppShellHeader>

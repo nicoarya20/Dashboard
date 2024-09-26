@@ -1,25 +1,60 @@
+'use client'
 import { WARNA } from '@/module/_global'
-import { ActionIcon, Box, Group, Paper, Text } from '@mantine/core'
+import { ActionIcon, Box, Button, Card, Group, Paper, Stack, Text, TextInput } from '@mantine/core'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 import { IoCalendarSharp } from 'react-icons/io5'
 
+
 export default function TambahKalender() {
+  const router = useRouter()
   return (
-   <Box>
-   <Box>
-     <Paper withBorder p={"xs"}>
-       <Group>
-         <ActionIcon variant="transparent">
-           <IoCalendarSharp color={WARNA.biruTua} size={30} />
-         </ActionIcon>
-         <Text fw={'-moz-initial'} size='25px'
-           pb={10}
-           pt={10}
-           c={WARNA.biruTua}
-         >Tambah Kalender</Text>
-       </Group>
-     </Paper>
-   </Box>
-   </Box>
+    <Box>
+      <Box>
+        <Paper withBorder p={"xs"}>
+          <Group>
+            <ActionIcon variant="transparent">
+              <IoCalendarSharp color={WARNA.biruTua} size={30} />
+            </ActionIcon>
+            <Text fw={'-moz-initial'} size='25px'
+              pb={10}
+              pt={10}
+              c={WARNA.biruTua}
+            >Tambah Kalender</Text>
+          </Group>
+        </Paper>
+      </Box>
+      <Box mt={20}>
+        <Card withBorder >
+          <Group>
+            <Stack gap={"md"}>
+              <TextInput
+                label="Nama"
+                placeholder='Masukkan Nama'
+              />
+              <TextInput
+                label="Jam"
+                placeholder='Masukkan Jam'
+              />
+              <TextInput
+                label="Nama"
+                placeholder='Masukkan Nama'
+              />
+              <TextInput
+                label="Tanggal"
+                placeholder='Masukkan Tanggal'
+              />
+              <TextInput
+                label="Deskripsi"
+                placeholder='Masukkan Deskripsi'
+              />
+                <Button bg={WARNA.biruTua}>Simpan</Button>
+                <Button bg={WARNA.biruTua} onClick={() => router.push("/kalender")}>Kembali</Button>
+            </Stack>
+          </Group>
+        </Card>
+      </Box>
+
+    </Box>
   )
 }

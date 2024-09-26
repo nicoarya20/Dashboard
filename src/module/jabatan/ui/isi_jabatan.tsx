@@ -1,9 +1,5 @@
 'use client'
-import { WARNA } from "@/module/_global";
-import { ActionIcon, Anchor, Box, Button, Flex, Grid, GridCol, Group, Paper, Select, SimpleGrid, Table, Text} from "@mantine/core";
-import { BsFillPlusCircleFill } from "react-icons/bs";
-import { FaUserTie } from "react-icons/fa6";
-import { FiFilter } from "react-icons/fi";
+import { Box, Paper, Table } from "@mantine/core";
 
 
 export default function IsiJabatan() {

@@ -1,6 +1,5 @@
 "use client"
 import { ActionIcon, Box, Button, Flex, Group, Paper, Text } from "@mantine/core";
-import IsiAnggota from "./isi_anggota";
 import { WARNA } from "@/module/_global";
 import { PiUsersFourFill } from "react-icons/pi";
 import { useRouter } from "next/navigation";

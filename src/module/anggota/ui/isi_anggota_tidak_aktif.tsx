@@ -1,9 +1,9 @@
 'use client'
 import { WARNA } from "@/module/_global";
-import { ActionIcon, Anchor, Box, Button, Flex, Grid, GridCol, Group, Paper, Select, SimpleGrid, Table, Text, TextInput } from "@mantine/core";
-import { BsFillPlusCircleFill } from "react-icons/bs";
-import { FiFilter } from "react-icons/fi";
-import { PiUsersFourFill } from "react-icons/pi";
+import { Anchor, Box, Group, Table } from "@mantine/core";
+import { useRouter } from "next/navigation";
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 
 export default function IsiAnggotaTidakAktif() {
@@ -27,8 +27,17 @@ export default function IsiAnggotaTidakAktif() {
          <Table.Td>{element.nama}</Table.Td>
          <Table.Td>{element.email}</Table.Td>
          <Table.Td>{element.tlp}</Table.Td>
+         <Table.Td>
+            <Group >
+               <Anchor underline="never">
+               <FaEdit onClick={()=>router.push("/editanggota")} color={WARNA.biruTua} size={30} />
+               <MdDelete color={WARNA.biruTua} size={30} />
+               </Anchor>
+            </Group>
+         </Table.Td>
       </Table.Tr>
    ));
+   const router = useRouter()
    return (
       <Box>
          <Box pr={5} pt={10} >
@@ -42,6 +51,9 @@ export default function IsiAnggotaTidakAktif() {
                         <Table.Th style={{justifyContent: "center"}}>Nama</Table.Th>
                         <Table.Th style={{justifyContent: "center"}}>Email</Table.Th>
                         <Table.Th style={{justifyContent: "center"}}>No.Telp</Table.Th>
+                        <Table.Th style={{justifyContent: "center"}} >
+                           Action
+                        </Table.Th>
                      </Table.Tr>
                   </Table.Thead>
                   <Table.Tbody>{rows}</Table.Tbody>

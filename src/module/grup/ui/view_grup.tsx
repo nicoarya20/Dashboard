@@ -1,10 +1,9 @@
 'use client'
-import { ActionIcon, Box, Button, Flex, Group, Paper, Text } from "@mantine/core";
-import IsiGrup from "./isi_grup";
-import { MdGroupAdd } from "react-icons/md";
 import { WARNA } from "@/module/_global";
-import TabGrup from "./tab_grup";
+import { ActionIcon, Box, Button, Flex, Group, Paper, Text } from "@mantine/core";
 import { useRouter } from "next/navigation";
+import { MdGroupAdd } from "react-icons/md";
+import TabGrup from "./tab_grup";
 
 
 export default function ViewGrup() {
