@@ -1,17 +1,13 @@
 'use client'
-import { ActionIcon, AppShell, AppShellHeader, AppShellMain, AppShellNavbar, Box, Burger, Group, Image, NavLink, Text } from '@mantine/core';
+import { ActionIcon, AppShell, Box, Burger, Group, NavLink, Text } from '@mantine/core';
 import { useDisclosure, useShallowEffect } from '@mantine/hooks';
 import { usePathname, useRouter } from 'next/navigation';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { FaUserTie } from 'react-icons/fa6';
 import { HiMegaphone, HiMiniPresentationChartBar, HiMiniUserGroup } from 'react-icons/hi2';
-import { IoColorPalette, IoHome } from 'react-icons/io5';
-import { MdGroupAdd } from 'react-icons/md';
-import { PiUsersFourFill } from 'react-icons/pi';
-import { MdEditDocument } from "react-icons/md";
-import { IoDocumentText } from "react-icons/io5";
-import { PiChatsFill } from "react-icons/pi";
-import { IoCalendarSharp } from "react-icons/io5";
+import { IoCalendarSharp, IoColorPalette, IoDocumentText, IoHome } from 'react-icons/io5';
+import { MdEditDocument, MdGroupAdd } from 'react-icons/md';
+import { PiChatsFill, PiUsersFourFill } from 'react-icons/pi';
 import { WARNA } from '../fun/WARNA';
 
 const dataLayout = [
