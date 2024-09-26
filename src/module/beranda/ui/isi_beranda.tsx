@@ -1,6 +1,6 @@
 'user client'
 import { WARNA } from '@/module/_global'
-import { ActionIcon, Box, Card, Flex, Grid, GridCol, Group, Paper, Text, } from '@mantine/core'
+import { ActionIcon, Box, Card, Flex, Group, Paper, SimpleGrid, Text, } from '@mantine/core'
 import React from 'react'
 import { FaUserTie } from 'react-icons/fa6'
 import { HiMiniPresentationChartBar, HiMiniUserGroup } from 'react-icons/hi2'
@@ -13,23 +13,23 @@ export default function IsiBeranda() {
     <Box>
       <Card withBorder padding={"xs"}>
         <Group>
-        <ActionIcon variant='transparent'>
-        <IoHome color={WARNA.biruTua} size={30} />
-        </ActionIcon>
-        <Text
-          fw={'-moz-initial'}
-          size='25px'
-          pb={10}
-          pt={10}
-          c={WARNA.biruTua}
-        >
-          Hello, Welcome Dev !
-        </Text>
+          <ActionIcon variant='transparent'>
+            <IoHome color={WARNA.biruTua} size={30} />
+          </ActionIcon>
+          <Text
+            fw={'-moz-initial'}
+            size='25px'
+            pb={10}
+            pt={10}
+            c={WARNA.biruTua}
+          >
+            Hello, Welcome Dev !
+          </Text>
         </Group>
       </Card>
       <Box pt={20}>
-        <Grid>
-          <GridCol span={4}>
+        <SimpleGrid cols={{ base: 1, sm: 2, lg: 5 }}>
+          <Box>
             <Card shadow="sm" padding="lg">
               <Group>
                 <ActionIcon
@@ -45,8 +45,8 @@ export default function IsiBeranda() {
                 </Flex>
               </Group>
             </Card>
-          </GridCol>
-          <GridCol span={4}>
+          </Box>
+          <Box>
             <Card shadow="sm" padding="lg">
               <Group>
                 <ActionIcon
@@ -61,8 +61,8 @@ export default function IsiBeranda() {
                 </Flex>
               </Group>
             </Card>
-          </GridCol>
-          <GridCol span={4}>
+          </Box>
+          <Box>
             <Card shadow="sm" padding="lg">
               <Group >
                 <ActionIcon
@@ -77,8 +77,8 @@ export default function IsiBeranda() {
                 </Flex>
               </Group>
             </Card>
-          </GridCol>
-          <GridCol span={6}>
+          </Box>
+          <Box>
             <Card shadow='sm' padding='lg'>
               <Group>
                 <ActionIcon
@@ -94,8 +94,8 @@ export default function IsiBeranda() {
                 </Flex>
               </Group>
             </Card>
-          </GridCol>
-          <GridCol span={6}>
+          </Box>
+          <Box >
             <Card shadow='sm' padding='lg'>
               <Group>
                 <ActionIcon
@@ -111,14 +111,14 @@ export default function IsiBeranda() {
                 </Flex>
               </Group>
             </Card>
-          </GridCol>
-        </Grid>
+          </Box>
+        </SimpleGrid>
         <Box style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh', }} >
           <Paper style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh', }}>
             <Text fz={20} c='dimmed'>Tidak Ada Pengumuman</Text>
           </Paper>
         </Box>
       </Box>
-    </Box>
+    </Box >
   )
 }
