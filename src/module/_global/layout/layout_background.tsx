@@ -1,6 +1,6 @@
 'use client'
-import { ActionIcon, AppShell, AppShellHeader, AppShellMain, AppShellNavbar, Box, Group, Image, NavLink, Text } from '@mantine/core';
-import { useShallowEffect } from '@mantine/hooks';
+import { ActionIcon, AppShell, AppShellHeader, AppShellMain, AppShellNavbar, Box, Burger, Group, Image, NavLink, Text } from '@mantine/core';
+import { useDisclosure, useShallowEffect } from '@mantine/hooks';
 import { usePathname, useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 import { FaUserTie } from 'react-icons/fa6';
@@ -71,7 +71,7 @@ const dataDivisi = [
   {
     id: 2,
     name: 'Dokumen',
-    icon: <IoDocumentText color={WARNA.biruTua}  size={30} />,
+    icon: <IoDocumentText color={WARNA.biruTua} size={30} />,
     link: '/dokumen',
   },
   {
@@ -91,28 +91,27 @@ const dataDivisi = [
 export function LayoutBackground({ children }: { children: React.ReactNode }) {
   const [active, setActive] = useState("");
   const pathname = usePathname();
+  const [opened, { toggle }] = useDisclosure();
   useShallowEffect(() => {
     setActive(pathname);
   });
   const router = useRouter()
   return (
-    <AppShell
+    <>
+        <AppShell
       header={{ height: 60 }}
-      navbar={{ width: 300, breakpoint: 'sm' }}
-
+      navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
+      padding="md"
     >
-      <AppShellHeader bg={'#19345E'}>
-        <Group pl={10}>
-          <ActionIcon size={50} variant='transparent' pt={5}>
-            <Image width={50} height={50} src={"/assets/img/logo/logo-1.png"} alt='' />
-          </ActionIcon>
+      <AppShell.Header  bg={'#19345E'}>
+        <Group h="100%" px="md">
+          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           <Text c={'white'} pt={10} fz={25}
           >PERBEKEL DARMASABA</Text>
-
         </Group>
-      </AppShellHeader>
-      <AppShellNavbar>
-        {dataBeranda.map((v, i) => {
+      </AppShell.Header>
+      <AppShell.Navbar p="md">
+      {dataBeranda.map((v, i) => {
           return (
             <Box key={i}>
               <NavLink
@@ -174,12 +173,13 @@ export function LayoutBackground({ children }: { children: React.ReactNode }) {
             </Box>
           )
         })}
-      </AppShellNavbar>
-      <AppShellMain>
-        <Box p={20}>
+      </AppShell.Navbar>
+      <AppShell.Main>
+      <Box p={20}>
         {children}
         </Box>
-      </AppShellMain>
+      </AppShell.Main>
     </AppShell>
-  );
+    </>
+  )
 }
