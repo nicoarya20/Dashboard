@@ -1,5 +1,4 @@
-import ViewAnggota from '@/module/anggota/ui/view_anggota'
-
+import { ViewAnggota } from "@/module/anggota";
 
 export default function Page() {
   return (

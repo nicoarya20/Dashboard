@@ -22,6 +22,7 @@ export default function TambahTugas() {
                </Group>
             </Paper>
          </Box>
+         <Button mt={10} bg={WARNA.biruTua} onClick={() => router.push("/tugas")}>Kembali</Button>
          <Box mt={20}>
             <Card withBorder >
                <Group>
@@ -50,7 +51,6 @@ export default function TambahTugas() {
                         placeholder='Deskripsi Tugas'
                      />
                      <Button bg={WARNA.biruTua}>Simpan</Button>
-                     <Button bg={WARNA.biruTua} onClick={()=>router.push("/tugas")}>Kembali</Button>
                   </Stack>
                </Group>
             </Card>

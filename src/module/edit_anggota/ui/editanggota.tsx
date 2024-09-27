@@ -9,7 +9,7 @@ export default function EditAnggota() {
    const router = useRouter()
    return (
       <Box>
-         <Box>
+         <Box mb={10}>
             <Paper withBorder p={"xs"}>
                <Flex justify="space-between" align={"center"}>
                   <Group>
@@ -25,7 +25,8 @@ export default function EditAnggota() {
                </Flex>
             </Paper>
          </Box>
-         <Box mt={20}>
+         <Button bg={WARNA.biruTua} radius={20} onClick={() => router.push("/anggota")}>Back</Button>
+         <Box mt={10}>
             <Card withBorder>
                <Group>
                   <Stack>
@@ -34,12 +35,12 @@ export default function EditAnggota() {
                         placeholder="Jabatan"
                         data={['Anggota', 'Staff', 'Kepala Devisi']}
                      />
-                      <Select
+                     <Select
                         label="Grup"
                         placeholder="Grup"
-                        data={['Grup 1', 'Grup 2', 'Grup 3','Grup 4','Grup 5','Grup 6','Grup 7','Grup 8']}
+                        data={['Grup 1', 'Grup 2', 'Grup 3', 'Grup 4', 'Grup 5', 'Grup 6', 'Grup 7', 'Grup 8']}
                      />
-                      <Select
+                     <Select
                         label="User Role"
                         placeholder="User Role"
                         data={['Admin', 'Wakil Super Admin', 'Wakil Admin', 'User']}
@@ -52,12 +53,11 @@ export default function EditAnggota() {
                         label="Email"
                         placeholder='Masukkan Email'
                      />
-                      <TextInput
+                     <TextInput
                         label="No.Telpon"
                         placeholder='Masukkan No.Telpon'
                      />
                      <Button bg={WARNA.biruTua} radius={20}>Simpan</Button>
-                     <Button bg={WARNA.biruTua} radius={20} onClick={()=>router.push("/anggota")}>Back</Button>
                   </Stack>
                </Group>
             </Card>

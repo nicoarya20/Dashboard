@@ -101,7 +101,7 @@ export function LayoutBackground({ children }: { children: React.ReactNode }) {
     >
       <AppShell.Header  bg={'#19345E'}>
         <Group h="100%" px="md">
-          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+          <Burger color={WARNA.bgWhite} opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           <Text c={'white'} pt={10} fz={25}
           >PERBEKEL DARMASABA</Text>
         </Group>

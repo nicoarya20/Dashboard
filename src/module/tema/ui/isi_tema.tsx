@@ -1,79 +1,85 @@
 'use client'
 import { WARNA } from '@/module/_global'
-import { BarChart } from '@mantine/charts'
-import { ActionIcon, Box, ColorPicker, Flex, Group, Paper, Text } from '@mantine/core'
-import React, { useState } from 'react'
+import { ActionIcon, Anchor, Box, Button, Center, ColorSwatch, Flex, Group, Paper, Table, Text } from '@mantine/core'
+import { useRouter } from 'next/navigation'
+import { FaEdit } from 'react-icons/fa'
 import { IoColorPalette } from 'react-icons/io5'
+import { MdDelete } from 'react-icons/md'
 
-const dataBar = [
+const dataColor = [
 
    {
-      month: "Januari",
-      divisi: 8,
-      kegiatan: 5,
-      pengumuman: 10,
-      anggota: 20,
-      jabatan: 5,
-      grup: 20
+      tema: "Tema 1",
+      color: "Warna",
+      color1: <ColorSwatch color="#19345E" />,
+      color2: <ColorSwatch color="#F4F9FD"/>,
+      color3: <ColorSwatch color="#384288"/>,
+      color4: <ColorSwatch color="#FCAA4B"/>,
+      color5: <ColorSwatch color="#FCAA4B"/>,
+      color6: <ColorSwatch color="#DCEED8"/>
    },
    {
-      
-      month: "Februari",
-      divisi: 10,
-      kegiatan: 7,
-      pengumuman: 12,
-      anggota: 22,
-      jabatan: 7,
-      grup: 22
+
+      tema: "Tema 2",
+      color: "Warna",
+      color1: <ColorSwatch color="#508D4E"/>,
+      color2: <ColorSwatch color="#F4F9FD"/>,
+      color3: <ColorSwatch color="#3C8754"/>,
+      color4: <ColorSwatch color="#FCAA4B"/>,
+      color5: <ColorSwatch color="#FCAA4B"/>,
+      color6: <ColorSwatch color="#DCEED8"/>
    },
    {
-      
-      month: "Maret",
-      divisi: 12,
-      kegiatan: 9,
-      pengumuman: 14,
-      anggota: 24,
-      jabatan: 9,
-      grup: 24
+
+      tema: "Tema 3",
+      color: "Warna",
+      color1: <ColorSwatch color="#19345E" />,
+      color2: <ColorSwatch color="#F4F9FD"/>,
+      color3: <ColorSwatch color="#384288"/>,
+      color4: <ColorSwatch color="#FCAA4B"/>,
+      color5: <ColorSwatch color="#FCAA4B"/>,
+      color6: <ColorSwatch color="#DCEED8"/>
    },
    {
-      
-      month: "April",
-      divisi: 14,
-      kegiatan: 11,
-      pengumuman: 16,
-      anggota: 26,
-      jabatan: 11,
-      grup: 26
-   },
-   {
-      
-      month: "Mei",
-      divisi: 16,
-      kegiatan: 13,
-      pengumuman: 18,
-      anggota: 28,
-      jabatan: 13,
-      grup: 28
-   },
-   {
-     
-      month: "Juni",
-      divisi: 18,
-      kegiatan: 15,
-      pengumuman: 20,
-      anggota: 30,
-      jabatan: 15,
-      grup: 30
+
+      tema: "Tema 4",
+      color: "Warna",
+      color1: <ColorSwatch color="#508D4E"/>,
+      color2: <ColorSwatch color="#F4F9FD"/>,
+      color3: <ColorSwatch color="#3C8754"/>,
+      color4: <ColorSwatch color="#FCAA4B"/>,
+      color5: <ColorSwatch color="#FCAA4B"/>,
+      color6: <ColorSwatch color="#DCEED8"/>
    }
 ]
 
 export default function IsiTema() {
-   const [value, onChange] = useState('rgba(47, 119, 150, 0.7)')
+   const router = useRouter()
+   const rows = dataColor.map((element) => (
+      <Table.Tr key={element.tema}>
+         <Table.Td  style={{justifyContent: "center"}}>{element.tema}</Table.Td>
+         <Table.Td style={{justifyContent: "center"}}>{element.color}</Table.Td>
+         <Table.Td style={{justifyContent: "center"}}>{element.color1}</Table.Td>
+         <Table.Td style={{justifyContent: "center"}}>{element.color2}</Table.Td>
+         <Table.Td style={{justifyContent: "center"}}>{element.color3}</Table.Td>
+         <Table.Td style={{justifyContent: "center"}}>{element.color4}</Table.Td>
+         <Table.Td style={{justifyContent: "center"}}>{element.color5}</Table.Td>
+         <Table.Td style={{justifyContent: "center"}}>{element.color6}</Table.Td>
+         <Table.Td>
+        <Group justify='center'>
+          <Anchor underline='never'>
+            <FaEdit onClick={()=>router.push("/edittema")} color={WARNA.biruTua} size={30} />
+            <MdDelete color={WARNA.biruTua} size={30} />
+          </Anchor>
+        </Group>
+      </Table.Td>
+      </Table.Tr>
+   ));
    return (
       <Box>
          <Box>
             <Paper withBorder p={"xs"}>
+               <Flex justify={"space-between"} align={"center"}>
                <Group>
                   <ActionIcon variant="transparent">
                      <IoColorPalette color={WARNA.biruTua} size={30} />
@@ -84,35 +90,32 @@ export default function IsiTema() {
                      c={WARNA.biruTua}
                   >Tema</Text>
                </Group>
+               <Button bg={WARNA.biruTua} radius={20} onClick={()=>router.push('/tambahtema')}>Tambah</Button>
+               </Flex>
             </Paper>
          </Box>
          <Box pt={20}>
             <Paper withBorder p={20}>
-               <Flex justify='center' align='center' direction={"column"} >
-                  <ColorPicker format='rgba' value={value} onChange={onChange} />
-                  <Text>{value}</Text>
-               </Flex>
-            </Paper>
-         </Box>
-         <Box pt={10}>
-            <Paper withBorder p={10} >
-                  <Text pb={10} fw={'bold'} ta={'center'}>Perkembangan Sistem Perbekal Darmasaba</Text>
-                  <BarChart
-                  p={10}
-                  h={500}
-                  data={dataBar}
-                  dataKey="month"
-                  type='percent'
-                  series={[
-                     {  name: 'divisi', color: 'blue.5'},
-                     {  name: 'kegiatan', color: 'violet.5'},
-                     {  name: 'pengumuman', color: 'teal.5'},
-                     {  name: 'anggota', color: 'blue.5'},
-                     {  name: 'jabatan', color: 'violet.5'},
-                     {  name: 'grup', color: 'teal.5'},
-                  ]}
-                  tickLine='y'
-                  />
+               <Table>
+                  <Table.Thead>
+                     <Table.Tr>
+                        <Table.Th style={{justifyContent: "center"}}>Tema</Table.Th>
+                        <Table.Th style={{justifyContent: "center"}}>Warna</Table.Th>
+                        <Table.Th style={{justifyContent: "center"}}>Komponen Warna 1</Table.Th>
+                        <Table.Th style={{justifyContent: "center"}}>Komponen Warna 2</Table.Th>
+                        <Table.Th style={{justifyContent: "center"}}>Komponen Warna 3</Table.Th>
+                        <Table.Th style={{justifyContent: "center"}}>Komponen Warna 4</Table.Th>
+                        <Table.Th style={{justifyContent: "center"}}>Komponen Warna 5</Table.Th>
+                        <Table.Th style={{justifyContent: "center"}}>Komponen Warna 6</Table.Th>
+                        <Table.Th>
+                           <Center>
+                              Action
+                           </Center>
+                        </Table.Th>
+                     </Table.Tr>
+                  </Table.Thead>
+                  <Table.Tbody>{rows}</Table.Tbody>
+               </Table>
             </Paper>
          </Box>
       </Box>

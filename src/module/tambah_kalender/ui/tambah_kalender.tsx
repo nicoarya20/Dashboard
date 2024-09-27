@@ -24,6 +24,7 @@ export default function TambahKalender() {
           </Group>
         </Paper>
       </Box>
+      <Button mt={10} bg={WARNA.biruTua} onClick={() => router.push("/kalender")}>Kembali</Button>
       <Box mt={20}>
         <Card withBorder >
           <Group>
@@ -48,8 +49,7 @@ export default function TambahKalender() {
                 label="Deskripsi"
                 placeholder='Masukkan Deskripsi'
               />
-                <Button bg={WARNA.biruTua}>Simpan</Button>
-                <Button bg={WARNA.biruTua} onClick={() => router.push("/kalender")}>Kembali</Button>
+              <Button bg={WARNA.biruTua}>Simpan</Button>
             </Stack>
           </Group>
         </Card>

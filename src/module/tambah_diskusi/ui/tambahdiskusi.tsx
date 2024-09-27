@@ -23,28 +23,28 @@ export default function TambahDiskusi() {
                </Group>
             </Paper>
          </Box>
+         <Button mt={10} bg={WARNA.biruTua} radius={20} onClick={() => router.push("/diskusi")}>Kembali</Button>
          <Box mt={20}>
             <Card withBorder>
                <Group>
                   <Stack gap={"xs"}>
                      <Text>Nama</Text>
                      <TextInput
-                     placeholder='Nama'
+                        placeholder='Nama'
                      />
                      <Text>Hari</Text>
                      <TextInput
-                     placeholder='Hari'
+                        placeholder='Hari'
                      />
                      <Text>Jam</Text>
                      <TextInput
-                     placeholder='Jam'
+                        placeholder='Jam'
                      />
                      <Text>Komentar</Text>
                      <TextInput
-                     placeholder='Komentar'
+                        placeholder='Komentar'
                      />
                      <Button bg={WARNA.biruTua} radius={20}>Simpan</Button>
-                     <Button bg={WARNA.biruTua} radius={20} onClick={()=>router.push("/diskusi")}>Kembali</Button>
                   </Stack>
                </Group>
             </Card>

@@ -25,21 +25,21 @@ export default function TambahDokumen() {
           </Group>
         </Paper>
       </Box>
+      <Button mt={10} bg={WARNA.biruTua} onClick={() => router.push("/dokumen")}>Kembali</Button>
       <Box mt={20}>
         <Paper withBorder p={50}>
           <Group gap={4} mb={5}>
-          <ActionIcon variant='transparent'>
-              <MdEditDocument color={WARNA.biruTua} size={50}/>
+            <ActionIcon variant='transparent'>
+              <MdEditDocument color={WARNA.biruTua} size={50} />
             </ActionIcon>
             <Text>File Data</Text>
           </Group>
-            <FileInput
+          <FileInput
             placeholder="Upload File"
-            />
-            <Flex direction={'row'} gap={"md"}>
+          />
+          <Flex direction={'row'} gap={"md"}>
             <Button mt={10} bg={WARNA.biruTua}>Simpan</Button>
-            <Button mt={10} bg={WARNA.biruTua} onClick={()=> router.push("/dokumen")}>Kembali</Button>
-            </Flex>
+          </Flex>
         </Paper>
       </Box>
     </Box>

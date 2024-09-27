@@ -23,28 +23,28 @@ export default function TambahPengumuman() {
                </Group>
             </Paper>
          </Box>
+         <Button mt={10} bg={WARNA.biruTua} radius={20} onClick={() => router.push("/pengumuman")}>Kembali</Button>
          <Box mt={20}>
             <Card withBorder>
                <Group>
                   <Stack gap={"md"}>
                      <TextInput
-                     label="Nama"
-                     placeholder='Masukkan Nama'
+                        label="Nama"
+                        placeholder='Masukkan Nama'
                      />
                      <TextInput
-                     label="Hari"
-                     placeholder='Masukkan Hari'
+                        label="Hari"
+                        placeholder='Masukkan Hari'
                      />
                      <TextInput
-                     label="Jam"
-                     placeholder='Masukkan Jam'
+                        label="Jam"
+                        placeholder='Masukkan Jam'
                      />
                      <TextInput
-                     label="Pengumuman"
-                     placeholder='Masukkan Isi Pengumuman'
+                        label="Pengumuman"
+                        placeholder='Masukkan Isi Pengumuman'
                      />
                      <Button bg={WARNA.biruTua} radius={20}>Simpan</Button>
-                     <Button bg={WARNA.biruTua} radius={20} onClick={()=>router.push("/pengumuman")}>Kembali</Button>
                   </Stack>
                </Group>
             </Card>

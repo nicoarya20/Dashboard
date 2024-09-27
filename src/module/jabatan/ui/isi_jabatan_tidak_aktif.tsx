@@ -1,5 +1,9 @@
 'use client'
-import { Box, Paper, Table } from "@mantine/core";
+import { WARNA } from "@/module/_global";
+import { ActionIcon, Anchor, Box, Center, Group, Paper, Table } from "@mantine/core";
+import { useRouter } from "next/navigation";
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 
 export default function IsiJabatanTidakAktif() {
@@ -19,8 +23,17 @@ export default function IsiJabatanTidakAktif() {
          <Table.Td>{element.number}</Table.Td>
          <Table.Td>{element.jabatan}</Table.Td>
          <Table.Td>{element.grup}</Table.Td>
+         <Table.Td>
+            <Group >
+               <Anchor underline="never">
+               <FaEdit onClick={()=>router.push("/editjabatan")} color={WARNA.biruTua} size={30} />
+               <MdDelete color={WARNA.biruTua} size={30} />
+               </Anchor>
+            </Group>
+         </Table.Td>
       </Table.Tr>
    ));
+   const router = useRouter()
    return (
       <Box>
          <Box pr={5} pt={20} >
@@ -29,8 +42,11 @@ export default function IsiJabatanTidakAktif() {
                   <Table.Thead>
                      <Table.Tr pl={10}>
                         <Table.Th style={{ justifyContent: "center" }}>No</Table.Th>
-                        <Table.Th  style={{ justifyContent: "center" }}>Jabatan</Table.Th>
+                        <Table.Th style={{ justifyContent: "center" }}>Jabatan</Table.Th>
                         <Table.Th style={{ justifyContent: "center" }}>Grup</Table.Th>
+                        <Table.Th style={{justifyContent: "center"}} >
+                           Action
+                        </Table.Th>
                      </Table.Tr>
                   </Table.Thead>
                   <Table.Tbody>{rows}</Table.Tbody>

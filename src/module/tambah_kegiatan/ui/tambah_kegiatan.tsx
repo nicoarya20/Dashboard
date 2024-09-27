@@ -22,6 +22,7 @@ export default function TambahKegiatan() {
           </Group>
         </Paper>
       </Box>
+      <Button mt={10} bg={WARNA.biruTua} onClick={() => router.push("/kegiatan")}>Kembali</Button>
       <Box mt={20}>
         <Card withBorder >
           <Group>
@@ -33,22 +34,21 @@ export default function TambahKegiatan() {
               />
               <Text>Nama Kegiatan</Text>
               <TextInput
-              placeholder='Nama Kegiatan'
+                placeholder='Nama Kegiatan'
               />
               <Text>Jam Kegiatan</Text>
               <TextInput
-              placeholder='Jam Terlaksana'
+                placeholder='Jam Terlaksana'
               />
               <Text>Tanggal Kegiatan</Text>
               <TextInput
-              placeholder='Tanggal Terlaksana'
+                placeholder='Tanggal Terlaksana'
               />
               <Text>Deskripsi</Text>
               <TextInput
-              placeholder='Deskripsi Kegiatan'
+                placeholder='Deskripsi Kegiatan'
               />
               <Button bg={WARNA.biruTua}>Simpan</Button>
-              <Button bg={WARNA.biruTua} onClick={()=>router.push("/kegiatan")}>Kembali</Button>
             </Stack>
           </Group>
 

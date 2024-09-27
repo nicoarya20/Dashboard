@@ -20,12 +20,14 @@ export default function TambahAnggota() {
                         pb={10}
                         pt={10}
                         c={WARNA.biruTua}
-                     >Anggota</Text>
+                     >Tambah Anggota</Text>
                   </Group>
                </Flex>
             </Paper>
          </Box>
-         <Box>
+         <Button radius={20} bg={WARNA.biruTua} onClick={() => router.push('/anggota')}>
+            Kembali </Button>
+         <Box mt={10}>
             <Card withBorder >
                <Group>
                   <Stack>
@@ -56,11 +58,8 @@ export default function TambahAnggota() {
                         label={<Text>No. Telpon</Text>}
                         placeholder="+62 8XX XXX XXX"
                      />
-                     <Button bg={WARNA.biruTua} fullWidth>
+                     <Button radius={20} bg={WARNA.biruTua} fullWidth>
                         Simpan
-                     </Button>
-                     <Button bg={WARNA.biruTua} fullWidth onClick={() => router.push('/anggota')}>
-                       Kembali
                      </Button>
                   </Stack>
                </Group>

@@ -41,7 +41,7 @@ export default function IsiAnggotaTidakAktif() {
    return (
       <Box>
          <Box pr={5} pt={10} >
-               <Table>
+               <Table withTableBorder>
                   <Table.Thead>
                      <Table.Tr pl={10}>
                         <Table.Th style={{justifyContent: "center"}}>No</Table.Th>
