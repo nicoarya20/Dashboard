@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { BiArrowBack } from 'react-icons/bi'
 import { MdEditDocument } from 'react-icons/md'
 
-export default function TambahTugas() {
+export default function EditTugas() {
    const router = useRouter()
    return (
       <Box>

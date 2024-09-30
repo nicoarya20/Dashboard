@@ -1,5 +1,5 @@
 'use client'
-import { ActionIcon, AppShell, Box, Burger, Group, NavLink, Text } from '@mantine/core';
+import { ActionIcon, AppShell, Box, Burger, Group, Image, NavLink, Text } from '@mantine/core';
 import { useDisclosure, useShallowEffect } from '@mantine/hooks';
 import { usePathname, useRouter } from 'next/navigation';
 import React, { useState } from 'react';
@@ -95,13 +95,14 @@ export function LayoutBackground({ children }: { children: React.ReactNode }) {
   return (
     <>
         <AppShell
-      header={{ height: 60 }}
+      header={{ height: 80 }}
       navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
       padding="md"
     >
       <AppShell.Header  bg={'#19345E'}>
         <Group h="100%" px="md">
           <Burger color={WARNA.bgWhite} opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+          <Image src={'/assets/img/logo/logo-1.png'} alt={'logo'} width={60} height={60} />
           <Text c={'white'} pt={10} fz={25}
           >PERBEKEL DARMASABA</Text>
         </Group>

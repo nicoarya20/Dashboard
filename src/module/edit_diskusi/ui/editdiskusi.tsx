@@ -3,13 +3,14 @@ import { WARNA } from '@/module/_global'
 import { ActionIcon, Box, Button, Card, Group, Paper, Stack, Text, TextInput } from '@mantine/core'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import { BiArrowBack } from 'react-icons/bi'
 import { PiChatsFill } from 'react-icons/pi'
 
 export default function EditDiskusi() {
    const router = useRouter()
    return (
       <Box>
-         <Box>
+         <Box mb={20}>
             <Paper withBorder p={"xs"}>
                <Group>
                   <ActionIcon variant='transparent'>
@@ -23,7 +24,7 @@ export default function EditDiskusi() {
                </Group>
             </Paper>
          </Box>
-         <Button mt={10} bg={WARNA.biruTua} radius={20} onClick={() => router.push("/diskusi")}>Kembali</Button>
+         <Button variant='subtle' leftSection={<BiArrowBack />} c={WARNA.biruTua} radius={20} onClick={() => router.push("/diskusi")}>Kembali</Button>
          <Box mt={20}>
             <Card withBorder>
                <Group>

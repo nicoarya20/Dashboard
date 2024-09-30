@@ -3,13 +3,14 @@ import { WARNA } from '@/module/_global'
 import { ActionIcon, Box, Button, Card, Group, Paper, Stack, Text, TextInput } from '@mantine/core'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import { BiArrowBack } from 'react-icons/bi'
 import { HiMegaphone } from 'react-icons/hi2'
 
 export default function TambahPengumuman() {
    const router = useRouter()
    return (
       <Box>
-         <Box>
+         <Box mb={20}>
             <Paper withBorder p={"xs"}>
                <Group>
                   <ActionIcon variant='transparent'>
@@ -23,7 +24,7 @@ export default function TambahPengumuman() {
                </Group>
             </Paper>
          </Box>
-         <Button mt={10} bg={WARNA.biruTua} radius={20} onClick={() => router.push("/pengumuman")}>Kembali</Button>
+         <Button variant='subtle' leftSection={<BiArrowBack />} radius={20} c={WARNA.biruTua} onClick={() => router.push("/pengumuman")}>Kembali</Button>
          <Box mt={20}>
             <Card withBorder>
                <Group>

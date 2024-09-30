@@ -3,13 +3,14 @@ import { WARNA } from '@/module/_global'
 import { ActionIcon, Box, Button, Card, Flex, Group, Paper, Select, Stack, Text, TextInput } from '@mantine/core'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import { BiArrowBack } from 'react-icons/bi'
 import { PiUsersFourFill } from 'react-icons/pi'
 
 export default function EditAnggota() {
    const router = useRouter()
    return (
       <Box>
-         <Box mb={10}>
+         <Box mb={20}>
             <Paper withBorder p={"xs"}>
                <Flex justify="space-between" align={"center"}>
                   <Group>
@@ -25,8 +26,8 @@ export default function EditAnggota() {
                </Flex>
             </Paper>
          </Box>
-         <Button bg={WARNA.biruTua} radius={20} onClick={() => router.push("/anggota")}>Back</Button>
-         <Box mt={10}>
+         <Button variant='subtle' leftSection={<BiArrowBack />} radius={20} c={WARNA.biruTua} onClick={() => router.push("/anggota")}>Kembali</Button>
+         <Box mt={20}>
             <Card withBorder>
                <Group>
                   <Stack>

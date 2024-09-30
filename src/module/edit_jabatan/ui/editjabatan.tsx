@@ -2,6 +2,7 @@
 import { WARNA } from "@/module/_global";
 import { ActionIcon, Box, Button, Card, Group, Paper, Select, Stack, Text } from "@mantine/core";
 import { useRouter } from "next/navigation";
+import { BiArrowBack } from "react-icons/bi";
 import { FaUserTie } from "react-icons/fa6";
 const dataGrup = [
    {
@@ -44,7 +45,7 @@ export default function EditJabatan() {
    const router = useRouter()
    return (
       <Box>
-         <Box>
+         <Box mb={20}>
             <Paper withBorder p={"xs"}>
                <Group>
                   <ActionIcon variant="transparent">
@@ -58,6 +59,7 @@ export default function EditJabatan() {
                </Group>
             </Paper>
          </Box>
+         <Button variant='subtle' leftSection={<BiArrowBack />} radius={20} c={WARNA.biruTua}  onClick={() => router.push('/jabatan')} >Kembali</Button>
          <Box mt={20}>
             <Card withBorder>
                <Group>
@@ -79,7 +81,7 @@ export default function EditJabatan() {
                         }))}
                      />
                   <Button  bg={WARNA.biruTua} radius={15} fullWidth>Simpan</Button>
-                  <Button  bg={WARNA.biruTua} radius={15} fullWidth onClick={() => router.push('/jabatan')} >Kembali</Button>
+                  
                   </Stack>
                </Group>
             </Card>

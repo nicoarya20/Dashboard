@@ -2,6 +2,7 @@
 import { WARNA } from '@/module/_global'
 import { ActionIcon, Box, Button, FileInput, Flex, Group, Paper, Text } from '@mantine/core'
 import { useRouter } from 'next/navigation'
+import { BiArrowBack } from 'react-icons/bi'
 // import React, { useState } from 'react'
 import { IoDocumentText } from 'react-icons/io5'
 import { MdEditDocument } from 'react-icons/md'
@@ -11,7 +12,7 @@ export default function TambahDokumen() {
   // const [value, setValue] = useState<File | null>(null);
   return (
     <Box>
-      <Box>
+      <Box mb={20}>
         <Paper withBorder p={"xs"}>
           <Group>
             <ActionIcon variant="transparent">
@@ -25,7 +26,7 @@ export default function TambahDokumen() {
           </Group>
         </Paper>
       </Box>
-      <Button mt={10} bg={WARNA.biruTua} onClick={() => router.push("/dokumen")}>Kembali</Button>
+      <Button variant='subtle' leftSection={<BiArrowBack />}  c={WARNA.biruTua} onClick={() => router.push("/dokumen")}>Kembali</Button>
       <Box mt={20}>
         <Paper withBorder p={50}>
           <Group gap={4} mb={5}>

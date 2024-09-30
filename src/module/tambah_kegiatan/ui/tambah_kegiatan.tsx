@@ -2,13 +2,14 @@
 import { WARNA } from '@/module/_global'
 import { ActionIcon, Box, Button, Card, Group, Paper, Select, Stack, Text, TextInput } from '@mantine/core'
 import { useRouter } from 'next/navigation'
+import { BiArrowBack } from 'react-icons/bi'
 import { HiMiniPresentationChartBar } from 'react-icons/hi2'
 
 export default function TambahKegiatan() {
   const router = useRouter()
   return (
     <Box>
-      <Box>
+      <Box mb={20}>
         <Paper withBorder p={"xs"}>
           <Group>
             <ActionIcon variant="transparent">
@@ -22,7 +23,7 @@ export default function TambahKegiatan() {
           </Group>
         </Paper>
       </Box>
-      <Button mt={10} bg={WARNA.biruTua} onClick={() => router.push("/kegiatan")}>Kembali</Button>
+      <Button variant='subtle' leftSection={<BiArrowBack />} radius={20} c={WARNA.biruTua} onClick={() => router.push("/kegiatan")}>Kembali</Button>
       <Box mt={20}>
         <Card withBorder >
           <Group>

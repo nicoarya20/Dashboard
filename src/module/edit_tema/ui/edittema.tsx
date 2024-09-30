@@ -3,6 +3,7 @@ import { WARNA } from '@/module/_global'
 import { ActionIcon, Box, Button, Card, ColorInput, Flex, Group, Paper, Stack, Text, TextInput } from '@mantine/core'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { BiArrowBack } from 'react-icons/bi'
 import { IoColorPalette } from 'react-icons/io5'
 
 
@@ -16,7 +17,7 @@ export default function EditTema() {
    const [warna6, setWarna6] = useState("")
    return (
       <Box>
-         <Box>
+         <Box mb={20}>
             <Paper withBorder p={"xs"}>
                <Group>
                   <ActionIcon variant="transparent">
@@ -30,150 +31,13 @@ export default function EditTema() {
                </Group>
             </Paper>
          </Box>
-         {/* <Box mt={10}>
-            <Stack>
-               
-               <TextInput
-                  label="Tema"
-                  placeholder='Masukkan Tema'
-               />
-               <Text>Warna 1</Text>
-               <Menu>
-                  <Menu.Target>
-                     <Paper component={ActionIcon}
-                        bg={color} w={200} withBorder h={24} />
-                  </Menu.Target>
-                  <Menu.Dropdown>
-                     <Stack w={200}>
-                        {listColors.map((colorOption, i) => (
-                           <Menu.Item
-                              onClick={() => setColor(colorOption.value)}
-                              key={i}
-                              c={colorOption}
-                           >
-                              <FaCircle color={colorOption.value} style={{ marginRight: 10 }} />
-                              {colorOption.label}
-                           </Menu.Item>
-                        ))}
-                     </Stack>
-                  </Menu.Dropdown>
-               </Menu>
-               <Text>Warna 2</Text>
-               <Menu>
-                  <Menu.Target>
-                     <Paper component={ActionIcon}
-                        bg={color1} w={200} withBorder h={24} />
-                  </Menu.Target>
-                  <Menu.Dropdown>
-                     <Stack w={200}>
-                        {listColors1.map((colorOption1, i) => (
-                           <Menu.Item
-                              onClick={() => setColor1(colorOption1.value1)}
-                              key={i}
-                              c={colorOption1}
-                           >
-                              <FaCircle color={colorOption1.value1} style={{ marginRight: 10 }} />
-                              {colorOption1.label1}
-                           </Menu.Item>
-                        ))}
-                     </Stack>
-                  </Menu.Dropdown>
-               </Menu>
-            </Stack>
-            <Text>Warna 3</Text>
-               <Menu>
-                  <Menu.Target>
-                     <Paper component={ActionIcon}
-                        bg={color2} w={200} withBorder h={24} />
-                  </Menu.Target>
-                  <Menu.Dropdown>
-                     <Stack w={200}>
-                        {listColors2.map((colorOption2, i) => (
-                           <Menu.Item
-                              onClick={() => setColor2(colorOption2.value2)}
-                              key={i}
-                              c={colorOption2}
-                           >
-                              <FaCircle color={colorOption2.value2} style={{ marginRight: 10 }} />
-                              {colorOption2.label2}
-                           </Menu.Item>
-                        ))}
-                     </Stack>
-                  </Menu.Dropdown>
-               </Menu>
-               <Text>Warna 4</Text>
-               <Menu>
-                  <Menu.Target>
-                     <Paper component={ActionIcon}
-                        bg={color3} w={200} withBorder h={24} />
-                  </Menu.Target>
-                  <Menu.Dropdown>
-                     <Stack w={200}>
-                        {listColors3.map((colorOption3, i) => (
-                           <Menu.Item
-                              onClick={() => setColor3(colorOption3.value3)}
-                              key={i}
-                              c={colorOption3}
-                           >
-                              <FaCircle color={colorOption3.value3} style={{ marginRight: 10 }} />
-                              {colorOption3.label3}
-                           </Menu.Item>
-                        ))}
-                     </Stack>
-                  </Menu.Dropdown>
-               </Menu>
-               <Text>Warna 5</Text>
-               <Menu>
-                  <Menu.Target>
-                     <Paper component={ActionIcon}
-                        bg={color3} w={200} withBorder h={24} />
-                  </Menu.Target>
-                  <Menu.Dropdown>
-                     <Stack w={200}>
-                        {listColors4.map((colorOption4, i) => (
-                           <Menu.Item
-                              onClick={() => setColor4(colorOption4.value4)}
-                              key={i}
-                              c={colorOption4}
-                           >
-                              <FaCircle color={colorOption4.value4} style={{ marginRight: 10 }} />
-                              {colorOption4.label4}
-                           </Menu.Item>
-                        ))}
-                     </Stack>
-                  </Menu.Dropdown>
-               </Menu>
-               <Text>Warna 4</Text>
-               <Menu>
-                  <Menu.Target>
-                     <Paper component={ActionIcon}
-                        bg={color3} w={200} withBorder h={24} />
-                  </Menu.Target>
-                  <Menu.Dropdown>
-                     <Stack w={200}>
-                        {listColors3.map((colorOption3, i) => (
-                           <Menu.Item
-                              onClick={() => setColor3(colorOption3.value3)}
-                              key={i}
-                              c={colorOption3}
-                           >
-                              <FaCircle color={colorOption3.value3} style={{ marginRight: 10 }} />
-                              {colorOption3.label3}
-                           </Menu.Item>
-                        ))}
-                     </Stack>
-                  </Menu.Dropdown>
-               </Menu>
-            </Box> */}
-
          <Box>
-            <Button mt={10} mb={10}
-               bg={WARNA.biruTua}
-               radius={20}
-               onClick={() => router.push("/tema")}>Back</Button>
+         <Button c={WARNA.biruTua} variant='subtle' radius={30} leftSection={<BiArrowBack />} onClick={() => router.push("/tema")}>Kembali</Button>
+         </Box>
+         <Box mt={20}>
             <Card withBorder>
                <Group>
-                  <Stack mt={20}>
+                  <Stack >
                      <TextInput label="Name Tema" placeholder='Name Tema' />
                      <ColorInput
                         label="Warna 1"
