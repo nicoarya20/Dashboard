@@ -5,8 +5,6 @@ import { useRouter } from 'next/navigation';
 import { BiArrowBack } from 'react-icons/bi';
 import { HiMegaphone } from 'react-icons/hi2';
 
-
-
 function EditPengumuman() {
   const router = useRouter();
   return (
