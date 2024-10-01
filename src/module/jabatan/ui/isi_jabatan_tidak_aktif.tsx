@@ -1,6 +1,6 @@
 'use client'
 import { WARNA } from "@/module/_global";
-import { ActionIcon, Anchor, Box, Center, Group, Paper, Table } from "@mantine/core";
+import { Anchor, Box, Group, Paper, Table } from "@mantine/core";
 import { useRouter } from "next/navigation";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";

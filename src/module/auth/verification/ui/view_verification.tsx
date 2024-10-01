@@ -63,7 +63,7 @@ export default function ViewVerification() {
                 <Group justify="center" mt={5}>
                   <Text fz={12} c={WARNA.biruTua}>
                     Tidak menerima kode verifikasi? {""}
-                    <Anchor c={WARNA.biruTua}
+                    <Anchor  c={WARNA.biruTua}
                       fz={12}
 
                     >
