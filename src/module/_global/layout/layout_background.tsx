@@ -1,5 +1,5 @@
 'use client'
-import { ActionIcon, AppShell, Box, Burger, Group, Image, NavLink, Text } from '@mantine/core';
+import { ActionIcon, Anchor, AppShell, Box, Burger, Flex, Group, Image, NavLink, Text } from '@mantine/core';
 import { useDisclosure, useShallowEffect } from '@mantine/hooks';
 import { usePathname, useRouter } from 'next/navigation';
 import React, { useState } from 'react';
@@ -9,6 +9,9 @@ import { IoCalendarSharp, IoColorPalette, IoDocumentText, IoHome } from 'react-i
 import { MdEditDocument, MdGroupAdd } from 'react-icons/md';
 import { PiChatsFill, PiUsersFourFill } from 'react-icons/pi';
 import { WARNA } from '../fun/WARNA';
+import { FaUser } from "react-icons/fa6";
+import { FiLogOut } from "react-icons/fi";
+import { RiLayoutTop2Fill } from "react-icons/ri";
 
 const dataLayout = [
   {
@@ -47,6 +50,12 @@ const dataLayout = [
     icon: <IoColorPalette color={WARNA.biruTua} size={30} />,
     link: '/tema',
   },
+  {
+    id: 9,
+    name: 'Banner',
+    icon: <RiLayoutTop2Fill color={WARNA.biruTua} size={30} />,
+    link: '/banner'
+  }
 ]
 
 const dataBeranda = [
@@ -94,89 +103,106 @@ export function LayoutBackground({ children }: { children: React.ReactNode }) {
   const router = useRouter()
   return (
     <>
-        <AppShell
-      header={{ height: 80 }}
-      navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
-      padding="md"
-    >
-      <AppShell.Header  bg={'#19345E'}>
-        <Group h="100%" px="md">
-          <Burger color={WARNA.bgWhite} opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <Image src={'/assets/img/logo/logo-1.png'} alt={'logo'} width={60} height={60} />
-          <Text c={'white'} pt={10} fz={25}
-          >PERBEKEL DARMASABA</Text>
-        </Group>
-      </AppShell.Header>
-      <AppShell.Navbar p="md">
-      {dataBeranda.map((v, i) => {
-          return (
-            <Box key={i}>
-              <NavLink
-                h={60}
-                pl={20}
-                label={active == v.link ? <Text c={"blue"}>{v.name}</Text> : <Text c={"dark"}>{v.name}</Text>}
-                leftSection={
-                  <ActionIcon variant="subtle" aria-label="Settings" color={active == v.link ? "blue" : "dark"}>
-                    {v.icon}
-                  </ActionIcon>
-                }
-                onClick={() => router.push(`${v.link}`)}
+      <AppShell
+        header={{ height: 80 }}
+        navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
+        padding="md"
+      >
+        <AppShell.Header bg={'#19345E'}>
+          <Flex mt={8} direction="row" justify="space-between" align="center" >
+            <Group h="100%" px="md">
+              <Burger color={WARNA.bgWhite} opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+              <Image src={'/assets/img/logo/logo-1.png'} alt={'logo'} width={60} height={60} />
+              <Text c={'white'} pt={10} fz={25}
+              >PERBEKEL DARMASABA</Text>
+            </Group>
+            <Group mr={20}>
+              <Anchor underline='never'>
+                <Flex direction={"row"} align={"center"} justify={"center"} gap={"xl"}>
+                  <Group>
+                    <FaUser color="white" size={20} />
+                    <Text fw={"bold"} fz={"sm"} c={"white"}>User</Text>
+                  </Group>
+                  <Group>
+                    <FiLogOut color="white" size={20} />
+                    <Text fw={"bold"} fz={"sm"} c={"white"} onClick={() => router.push("/login")}>LogOut</Text>
+                  </Group>
+                </Flex>
+              </Anchor>
+            </Group>
 
-              />
-            </Box>
-          )
-        })}
-        <NavLink
-          label={<Text c={"dark"}>Divisi</Text>}
-          leftSection={<HiMiniUserGroup color={WARNA.biruTua}  size={30}/>}
-          childrenOffset={28}
-          pl={20}
-          h={60}
-        >
-          {dataDivisi.map((v, i) => {
-          return (
-            <Box key={i}>
-              <NavLink
-                h={60}
-                pl={20}
-                label={active == v.link ? <Text c={"blue"}>{v.name}</Text> : <Text c={"dark"}>{v.name}</Text>}
-                leftSection={
-                  <ActionIcon variant="subtle" aria-label="Settings" color={active == v.link ? "blue" : "dark"}>
-                    {v.icon}
-                  </ActionIcon>
-                }
-                onClick={() => router.push(`${v.link}`)}
+          </Flex>
+        </AppShell.Header>
+        <AppShell.Navbar p="md">
+          {dataBeranda.map((v, i) => {
+            return (
+              <Box key={i}>
+                <NavLink
+                  h={60}
+                  pl={20}
+                  label={active == v.link ? <Text c={"blue"}>{v.name}</Text> : <Text c={"dark"}>{v.name}</Text>}
+                  leftSection={
+                    <ActionIcon variant="subtle" aria-label="Settings" color={active == v.link ? "blue" : "dark"}>
+                      {v.icon}
+                    </ActionIcon>
+                  }
+                  onClick={() => router.push(`${v.link}`)}
 
-              />
-            </Box>
-          )
-        })}
-        </NavLink>
-        {dataLayout.map((v, i) => {
-          return (
-            <Box key={i}>
-              <NavLink
-                h={60}
-                pl={20}
-                label={active == v.link ? <Text c={"blue"}>{v.name}</Text> : <Text c={"dark"}>{v.name}</Text>}
-                leftSection={
-                  <ActionIcon variant="subtle" aria-label="Settings" color={active == v.link ? "blue" : "dark"}>
-                    {v.icon}
-                  </ActionIcon>
-                }
-                onClick={() => router.push(`${v.link}`)}
+                />
+              </Box>
+            )
+          })}
+          <NavLink
+            label={<Text c={"dark"}>Divisi</Text>}
+            leftSection={<HiMiniUserGroup color={WARNA.biruTua} size={30} />}
+            childrenOffset={28}
+            pl={20}
+            h={60}
+          >
+            {dataDivisi.map((v, i) => {
+              return (
+                <Box key={i}>
+                  <NavLink
+                    h={60}
+                    pl={20}
+                    label={active == v.link ? <Text c={"blue"}>{v.name}</Text> : <Text c={"dark"}>{v.name}</Text>}
+                    leftSection={
+                      <ActionIcon variant="subtle" aria-label="Settings" color={active == v.link ? "blue" : "dark"}>
+                        {v.icon}
+                      </ActionIcon>
+                    }
+                    onClick={() => router.push(`${v.link}`)}
 
-              />
-            </Box>
-          )
-        })}
-      </AppShell.Navbar>
-      <AppShell.Main>
-      <Box p={20}>
-        {children}
-        </Box>
-      </AppShell.Main>
-    </AppShell>
+                  />
+                </Box>
+              )
+            })}
+          </NavLink>
+          {dataLayout.map((v, i) => {
+            return (
+              <Box key={i}>
+                <NavLink
+                  h={60}
+                  pl={20}
+                  label={active == v.link ? <Text c={"blue"}>{v.name}</Text> : <Text c={"dark"}>{v.name}</Text>}
+                  leftSection={
+                    <ActionIcon variant="subtle" aria-label="Settings" color={active == v.link ? "blue" : "dark"}>
+                      {v.icon}
+                    </ActionIcon>
+                  }
+                  onClick={() => router.push(`${v.link}`)}
+
+                />
+              </Box>
+            )
+          })}
+        </AppShell.Navbar>
+        <AppShell.Main>
+          <Box p={20}>
+            {children}
+          </Box>
+        </AppShell.Main>
+      </AppShell>
     </>
   )
 }

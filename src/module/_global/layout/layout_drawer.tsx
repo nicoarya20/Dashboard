@@ -13,7 +13,7 @@ export default function LayoutDrawer({ opened, onClose, title, children, size }:
           content: {
             backgroundColor: "white",
             borderRadius: "20px 20px 0px 0px",
-            maxWidth: 550,
+            maxWidth: 800,
             margin: "0 auto",
           },
         }}

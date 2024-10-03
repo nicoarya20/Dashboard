@@ -20,7 +20,7 @@ function EditPengumuman() {
                 pb={10}
                 pt={10}
                 c={WARNA.biruTua}
-              >Pengumuman</Text>
+              >Edit Pengumuman</Text>
             </Group>
           </Flex>
         </Paper>

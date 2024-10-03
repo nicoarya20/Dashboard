@@ -28,7 +28,8 @@ export default function IsiBeranda() {
         </Group>
       </Card>
       <Box pt={20}>
-        <SimpleGrid cols={{ base: 1, sm: 2, lg: 5 }}>
+        <SimpleGrid cols={{ base: 1, sm: 2, md: 3, lg: 5 }}
+        >
           <Box>
             <Card shadow="sm" padding="lg">
               <Group>
