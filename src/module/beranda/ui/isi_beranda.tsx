@@ -1,20 +1,97 @@
-'user client'
+'use client'
 import { WARNA } from '@/module/_global'
-import { ActionIcon, Box, Card, Flex, Group, Paper, SimpleGrid, Text, } from '@mantine/core'
-import React from 'react'
+import { ActionIcon, Box, Card, Center, Flex, Group, Paper, SimpleGrid, Stack, Text, } from '@mantine/core'
+import { useShallowEffect } from '@mantine/hooks'
+import Link from 'next/link'
+import { useState } from 'react'
 import { FaUserTie } from 'react-icons/fa6'
 import { HiMiniPresentationChartBar, HiMiniUserGroup } from 'react-icons/hi2'
 import { IoHome } from 'react-icons/io5'
+import { IconType } from 'react-icons/lib'
 import { MdGroupAdd } from 'react-icons/md'
 import { PiUsersFourFill } from 'react-icons/pi'
 
+const jsonData = [
+  {
+    id: 1,
+    title: "divisi",
+    value: 0,
+    path: "/divisi"
+  },
+  {
+    id: 2,
+    title: "kegiatan",
+    value: 0,
+    path: "/kegiatan"
+  },
+  {
+    id: 3,
+    title: "anggota",
+    value: 0,
+    path: "/anggota"
+  },
+  {
+    id: 4,
+    title: "group",
+    value: 0,
+    path: "/grup"
+  },
+  {
+    id: 5,
+    title: "jabatan",
+    value: 0,
+    path: "/jabatan"
+  }
+]
+
+const objectIcon = [
+  {
+    id: 1,
+    icon: HiMiniUserGroup
+  },
+  {
+    id: 2,
+    icon: HiMiniPresentationChartBar
+  },
+  {
+    id: 3,
+    icon: PiUsersFourFill
+  }
+  ,
+  {
+    id: 4,
+    icon: MdGroupAdd
+  }
+  ,
+  {
+    id: 5,
+    icon: FaUserTie
+  }
+]
+
 export default function IsiBeranda() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [, setDataMenu] = useState<any[] | null>(null)
+
+  async function loadData() {
+    // ngambil data
+    setDataMenu(jsonData)
+  }
+
+  useShallowEffect(() => {
+    loadData()
+  }, [])
+
+
   return (
-    <Box>
+    <Stack>
+      {/* <pre>
+        {JSON.stringify(dataMenu, null, 2)}
+      </pre> */}
       <Card withBorder padding={"xs"}>
         <Group>
           <ActionIcon variant='transparent'>
-            <IoHome color={WARNA.biruTua} size={30} />
+            <IoHome size={30} color={WARNA.biruTua} />
           </ActionIcon>
           <Text
             fw={'-moz-initial'}
@@ -27,11 +104,44 @@ export default function IsiBeranda() {
           </Text>
         </Group>
       </Card>
-      <Box pt={20}>
-        <SimpleGrid cols={{ base: 1, sm: 2, md: 3, lg: 5 }}
+
+      <SimpleGrid cols={{ lg: 4, md: 3, sm: 2 }} >
+        {jsonData.map((v, k) => <ItemMenu key={k} data={v} />)}
+      </SimpleGrid>
+
+      <Box style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh', }} >
+        <Paper style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh', }}>
+          <Text fz={20} c='dimmed'>Tidak Ada Pengumuman</Text>
+        </Paper>
+      </Box>
+    </Stack>
+  )
+}
+
+function ItemMenu({ data }: { data: typeof jsonData[0] }) {
+  return <Card withBorder padding="lg" component={Link} href={(data.path === "divisi") ? "/beranda" : data.path}>
+    <Flex>
+      <Center w={100}>
+        <CustonIcon data={data.id} />
+      </Center>
+      <Stack flex={1}>
+        <Text fw="bold">{data.title}</Text>
+        <Text fw={"bolder"} fz={30}>{data.value}</Text>
+      </Stack>
+    </Flex>
+  </Card>
+}
+
+function CustonIcon({ data }: { data: number }) {
+  const Icon: IconType = objectIcon.find((v) => v.id === data)?.icon as IconType
+  return <Box c={WARNA.biruTua}>
+    <Icon size={53} />
+  </Box>
+}
+
+{/* <SimpleGrid cols={{ base: 1, sm: 2, md: 3, lg: 5 }}
         >
-          <Box>
-            <Card shadow="sm" padding="lg">
+          <Card shadow="sm" padding="lg">
               <Group>
                 <ActionIcon
                   size={90}
@@ -46,8 +156,7 @@ export default function IsiBeranda() {
                 </Flex>
               </Group>
             </Card>
-          </Box>
-          <Box>
+          <Box className='bdr'>
             <Card shadow="sm" padding="lg">
               <Group>
                 <ActionIcon
@@ -63,8 +172,8 @@ export default function IsiBeranda() {
               </Group>
             </Card>
           </Box>
-          <Box>
-            <Card shadow="sm" padding="lg">
+          <Box >
+            <Card shadow="sm" padding="lg" className='bdr'>
               <Group >
                 <ActionIcon
                   size={90}
@@ -75,6 +184,7 @@ export default function IsiBeranda() {
                 <Flex direction={"column"}>
                   <Text fw={'bold'}>Anggota</Text>
                   <Text fw={"bolder"} fz={30}>0</Text>
+
                 </Flex>
               </Group>
             </Card>
@@ -113,13 +223,4 @@ export default function IsiBeranda() {
               </Group>
             </Card>
           </Box>
-        </SimpleGrid>
-        <Box style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh', }} >
-          <Paper style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh', }}>
-            <Text fz={20} c='dimmed'>Tidak Ada Pengumuman</Text>
-          </Paper>
-        </Box>
-      </Box>
-    </Box >
-  )
-}
+        </SimpleGrid> */}

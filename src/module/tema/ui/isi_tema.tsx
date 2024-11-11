@@ -11,7 +11,7 @@ const dataColor = [
    {
       tema: "Tema 1",
       color: "Warna",
-      color1: <ColorSwatch color="#19345E" />,
+      color1: <ColorSwatch color={"#19345E"} />,
       color2: <ColorSwatch color="#F4F9FD"/>,
       color3: <ColorSwatch color="#384288"/>,
       color4: <ColorSwatch color="#FCAA4B"/>,

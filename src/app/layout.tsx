@@ -4,7 +4,7 @@ import React from 'react';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import '@mantine/dates/styles.css';
 import '@mantine/dropzone/styles.css';
-
+import './globals.css'
 
 export const metadata = {
   title: 'Mantine Next.js template',
